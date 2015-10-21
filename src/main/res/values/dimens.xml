@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="material_gap">16dp</dimen>
+    <dimen name="material_gap_small">8dp</dimen>
+    <dimen name="material_gap_large">32dp</dimen>
+</resources>

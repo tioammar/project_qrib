@@ -28,7 +28,7 @@ import in.lovelacetech.qrib.model.Person;
  */
 public class SessionUtility {
 
-    public static final String PERSON_ID_KEY = "person_id"; // make this key public
+    private static final String PERSON_ID_KEY = "person_id";
     private static final String PERSON_NAME_KEY = "person_name";
     private static final String PERSON_USER_KEY = "person_user";
     private static final String PERSON_AVATAR_KEY = "person_avatar";

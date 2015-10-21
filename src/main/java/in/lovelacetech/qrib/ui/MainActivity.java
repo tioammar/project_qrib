@@ -54,6 +54,8 @@ public class MainActivity extends BaseActivity
         LoaderManager.LoaderCallbacks<Cursor>,
         GoogleMap.OnMarkerClickListener {
 
+    private static final String PERSON_ID_KEY = "person_id";
+
     private GoogleMap mMap;
     private GoogleApiClient mGoogleClient;
     private Location mUserLocation;
@@ -158,6 +160,7 @@ public class MainActivity extends BaseActivity
 
     /**
      * clearing user marker
+     * make it null
      */
     private void removeUserMarker(){
         if (mMyMarker != null){
@@ -223,7 +226,7 @@ public class MainActivity extends BaseActivity
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        String user = Integer.toString(sp.getInt(SessionUtility.PERSON_ID_KEY, 0));
+        String user = Integer.toString(sp.getInt(PERSON_ID_KEY, 0));
 
         if (user.equals("0")) return null;
 
