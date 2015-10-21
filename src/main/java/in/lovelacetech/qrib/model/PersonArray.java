@@ -23,10 +23,10 @@ import java.util.List;
 
 /**
  * Created by tioammar
- * on 10/18/15.
+ * on 10/21/15.
  */
-public class MarkSet implements Serializable {
+public class PersonArray implements Serializable {
 
-    @SerializedName("mark_list")
-    public List<MarkItem> marks;
+    @SerializedName("person_array")
+    public List<Person> persons;
 }

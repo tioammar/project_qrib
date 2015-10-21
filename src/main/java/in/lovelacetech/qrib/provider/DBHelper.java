@@ -27,7 +27,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DBHelper extends SQLiteOpenHelper {
 
-    static final String DATABASE_NAME = "qrib.db";
+    static final String DATABASE_NAME = "qrib_v2.db";
     private static final int DATABASE_VERSION = 1;
 
     public DBHelper(Context context) {

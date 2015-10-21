@@ -92,6 +92,7 @@ public class BitmapUtility {
     /**
      * helper method to compress image file
      * we duplicate original photo with a smaller one
+     * TODO: delete original photo
      */
     public static File getCompressedImage(Context context, String uri){
         // compressing
@@ -121,5 +122,4 @@ public class BitmapUtility {
         // return new file with new uri
         return new File(path);
     }
-
 }
