@@ -17,6 +17,7 @@
 package in.lovelacetech.qrib.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.twitter.sdk.android.core.models.User;
 
 import java.io.Serializable;
 
@@ -44,7 +45,15 @@ public class Person implements Serializable {
     @SerializedName("person_avatar")
     public String avatar;
 
-    public static Person getInstance(){
-        return new Person();
+    public static Person getInstance(User user){
+        Person person = new Person();
+        person.id = user.id;
+        person.name = user.name;
+        person.user = user.screenName;
+
+        // getting full size avatar
+        String avatarNormal = user.profileImageUrl;
+        person.avatar = avatarNormal.replace("_normal", "");
+        return person;
     }
 }

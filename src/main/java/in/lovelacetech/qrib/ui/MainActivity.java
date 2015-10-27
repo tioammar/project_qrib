@@ -160,6 +160,8 @@ public class MainActivity extends BaseActivity
         if (mUserLocation != null){
             if (LocationUtility.saveUserLocation(this, mUserLocation)){
                 // run data service and update location on server
+                // restart loader to set location
+                getSupportLoaderManager().restartLoader(0, null, this);
             }
         }
     }
@@ -226,6 +228,8 @@ public class MainActivity extends BaseActivity
         mUserLocation = location;
         if (LocationUtility.saveUserLocation(this, location)){
             // run data service and update location on server
+            // restart loader to set location
+            getSupportLoaderManager().restartLoader(0, null, this);
         }
     }
 
@@ -269,7 +273,7 @@ public class MainActivity extends BaseActivity
             mMarkers = new ArrayMap<>(data.getCount());
         } else {
             // set to null first before setting new size
-            mMarkers = null;
+            mMarkers.clear();
             mMarkers = new ArrayMap<>(data.getCount());
         }
 

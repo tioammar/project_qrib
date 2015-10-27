@@ -49,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private TwitterLoginButton mLoginButton;
     private TwitterSession mTwitterSession;
-    private Person mPerson;
 
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "7TFG6drIb3Y2av41hatNYHNTZ";
@@ -92,15 +91,9 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d(LOG_TAG, "Authorize..");
                 User user = result.data;
 
-                mPerson = new Person();
-                mPerson.id = user.id;
-                mPerson.name = user.name;
-                mPerson.user = user.screenName;
-
-                String avatarNormal = user.profileImageUrl;
-                mPerson.avatar = avatarNormal.replace("_normal", "");
-
-                createSession(mPerson);
+                // getting person instance from user data
+                Person person = Person.getInstance(user);
+                createSession(person);
             }
 
             @Override
