@@ -29,14 +29,17 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".ui.MainActivity"
-            android:label="@string/title_activity_main" >
+            android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="ecce201bcafcd8f0a2712ed51b127b8c87757409" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

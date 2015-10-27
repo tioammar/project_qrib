@@ -16,9 +16,11 @@
 
 package in.lovelacetech.qrib.ui;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.location.Location;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
@@ -43,6 +45,7 @@ import in.lovelacetech.qrib.R;
 import in.lovelacetech.qrib.model.MarkItem;
 import in.lovelacetech.qrib.model.LocationHelper;
 import in.lovelacetech.qrib.provider.Contract;
+import in.lovelacetech.qrib.ui.fragment.DetailFragment;
 import in.lovelacetech.qrib.utility.LocationUtility;
 import in.lovelacetech.qrib.utility.SessionUtility;
 
@@ -55,6 +58,7 @@ public class MainActivity extends BaseActivity
         GoogleMap.OnMarkerClickListener {
 
     private static final String PERSON_ID_KEY = "person_id";
+    private static final String DETAIL_FRAGMENT = "detail_fragment";
 
     private GoogleMap mMap;
     private GoogleApiClient mGoogleClient;
@@ -71,7 +75,9 @@ public class MainActivity extends BaseActivity
 
         // check user status
         if (!SessionUtility.getLoginStatus(this)){
-            // back to login activity
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+            return;
         }
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -300,6 +306,9 @@ public class MainActivity extends BaseActivity
         }
 
         MarkItem mark = mMarkers.get(marker);
+//        Uri uri = Contract.MarkColumn.buildMarkUri(Integer.toString(mark.id));
+//        DetailFragment fragment = DetailFragment.newInstance(uri);
+//        fragment.show(getSupportFragmentManager(), DETAIL_FRAGMENT);
 
         // testing purpose
         Toast.makeText(this, mark.content, Toast.LENGTH_SHORT).show();

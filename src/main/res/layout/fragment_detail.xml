@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="325dp"
+    android:layout_height="325dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingTop="@dimen/material_gap">
+
+        <android.support.v4.widget.Space
+            android:id="@+id/space"
+            android:layout_height="6dp"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar_view"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:layout_below="@id/space"
+            android:layout_marginLeft="@dimen/material_gap"
+            android:layout_marginStart="@dimen/material_gap"
+            android:src="@drawable/profile_image_empty"/>
+
+        <TextView
+            android:id="@+id/name_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/avatar_view"
+            android:layout_toEndOf="@id/avatar_view"
+            android:layout_below="@id/space"
+            android:layout_marginLeft="@dimen/material_gap"
+            android:layout_marginStart="@dimen/material_gap"
+            android:textSize="@dimen/text_small"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            tools:text="Full Name"/>
+
+        <TextView
+            android:id="@+id/time_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_view"
+            android:layout_toRightOf="@id/avatar_view"
+            android:layout_toEndOf="@id/avatar_view"
+            android:layout_marginLeft="@dimen/material_gap"
+            android:layout_marginStart="@dimen/material_gap"
+            android:textSize="@dimen/text_tiny"
+            android:textColor="@color/text_secondary"
+            tools:text="26 September 2015, 07:00 AM"/>
+
+        <TextView
+            android:id="@+id/content_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/avatar_view"
+            android:layout_marginTop="@dimen/material_gap_small"
+            android:padding="@dimen/material_gap"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_small"
+            android:singleLine="false"
+            tools:text="Content goes here..."/>
+
+        <ImageView
+            android:id="@+id/photo_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/photo_full_height"
+            android:layout_below="@id/content_view"
+            android:contentDescription="@string/photo_description"/>
+    </RelativeLayout>
+</ScrollView>

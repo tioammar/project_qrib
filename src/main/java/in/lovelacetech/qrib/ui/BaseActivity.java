@@ -61,6 +61,7 @@ public class BaseActivity extends AppCompatActivity
         mMainLayout = (DrawerLayout) findViewById(R.id.main_layout);
         Toolbar toolbar = getSupportToolbar();
         if (toolbar != null) {
+            toolbar.setNavigationIcon(R.drawable.ic_menu_light);
             toolbar.setNavigationOnClickListener(this);
         }
 

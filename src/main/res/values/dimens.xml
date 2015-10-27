@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="material_gap">16dp</dimen>
     <dimen name="material_gap_small">8dp</dimen>
-    <dimen name="material_gap_large">32dp</dimen>
+
+    <!-- Text size. -->
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_tiny">12sp</dimen>
+
+    <!-- Image size. -->
+    <dimen name="photo_item_height">200dp</dimen>
+    <dimen name="photo_full_height">300dp</dimen>
+    <dimen name="avatar_size">40dp</dimen>
+    <dimen name="avatar_size_detail">48dp</dimen>
 </resources>
